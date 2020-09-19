@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React ,{useState}from 'react';
+import Listado from './Components/Listado'
+import Formulario from './Components/DeveloperEdit';
+import DeveloperContext from './State';
 import './App.css';
 
 function App() {
+  const [developers, setDevelopers] = useState([])
+  const [developerEdit, setDeveloperEdit] = useState();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <DeveloperContext.Provider
+      value={{developers, setDevelopers: developers => setDevelopers(developers), developerEdit, setDeveloperEdit: developer => setDeveloperEdit(developer)}}
+    >
+      <div className="App">
+        <header className="App-header">
+          <p>
+            Desarrolladores
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        </header>
+        <div className="App-body">
+          <Formulario />
+          <Listado />
+        </div>
+      </div>
+    </DeveloperContext.Provider>
   );
 }
 
