@@ -45,6 +45,9 @@
   border-color: grey;
   background-color: #282c34;
 }
+.rootDeveloper:hover{
+  background-color: #5d6b88;
+}
 
 .infoDeveloper{
   display: flex;
