@@ -43,12 +43,18 @@
   border: solid 1px;
   border-radius: 5px;
   border-color: grey;
+  background-color: #282c34;
 }
 
 .infoDeveloper{
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: flex-start;
+  color: white;
+}
+.infoDeveloper:hover{
+  cursor: pointer;
 }
 
 .optionsContainer{

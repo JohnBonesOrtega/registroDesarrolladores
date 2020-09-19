@@ -12,7 +12,7 @@ export default (props) => {
         ]);
     }
     return (
-        <div className="rootDeveloper" >
+        <div className="rootDeveloper">
             <div className="infoDeveloper" onClick={props.onClick}>
                 <span>Nombres: {props.developer.nombres_completos}</span>
                 <span>Link Github: {props.developer.link_github}</span>
