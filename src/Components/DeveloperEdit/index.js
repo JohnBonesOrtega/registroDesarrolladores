@@ -22,7 +22,7 @@ export default (props) => {
     async function addDeveloper() {
         try {
             setLoading(true);
-            const result = await Axios.post('https://developers-backend.herokuapp.com/api/developers/', { nombres_completos: nombre, link_github: link, tecnologias_conocidas: tecnologias });
+            const result = await Axios.post('https://developers-frontend.herokuapp.com/api/developers/', { nombres_completos: nombre, link_github: link, tecnologias_conocidas: tecnologias });
             const newDevelopers = developers.developers;
             newDevelopers.push(result.data.developer);
             developers.setDevelopers([...newDevelopers]);
@@ -38,7 +38,7 @@ export default (props) => {
     async function updateDeveloper() {
         try {
             setLoading(true);
-            const result = await Axios.put(`https://developers-backend.herokuapp.com/api/developers/${developers.developerEdit._id}`, { nombres_completos: nombre, link_github: link, tecnologias_conocidas: tecnologias });
+            const result = await Axios.put(`https://developers-frontend.herokuapp.com/api/developers/${developers.developerEdit._id}`, { nombres_completos: nombre, link_github: link, tecnologias_conocidas: tecnologias });
             const newDeveloper = result.data.developer;
             const index = developers.developers.findIndex(dev => dev._id === newDeveloper._id);
             developers.setDevelopers([

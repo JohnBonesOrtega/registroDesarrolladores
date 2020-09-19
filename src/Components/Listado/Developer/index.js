@@ -5,7 +5,7 @@ import Axios from 'axios';
 export default (props) => {
     const developers = useContext(DevelopersContext);
     async function deleteDeveloper() {
-        await Axios.delete(`https://developers-backend.herokuapp.com/api/developers/${props.developer._id}`);
+        await Axios.delete(`https://developers-frontend.herokuapp.com/api/developers/${props.developer._id}`);
         developers.setDevelopers([
             ...developers.developers.slice(0, props.index),
             ...developers.developers.slice(props.index + 1),

@@ -10,7 +10,7 @@ export default (props) => {
         async function getDevelopers() {
             try {
                 setLoading(true);
-                const result = await Axios.get('https://developers-backend.herokuapp.com/api/developers/');
+                const result = await Axios.get('https://developers-frontend.herokuapp.com/api/developers/');
                 developers.setDevelopers(result.data.developers);
                 setLoading(false);
             } catch (error) {
